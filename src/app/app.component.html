@@ -1,0 +1,7 @@
+<div *ngFor="let grid of testGrids; let i = index">
+    <h1>Grid Test {{i + 1}}</h1>
+    <app-custom-grid
+        [config]="grid">
+    </app-custom-grid>
+</div>
+

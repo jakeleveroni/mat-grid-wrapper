@@ -1,0 +1,27 @@
+.custom-grid {
+    margin: 25px 10px 25px 10px;
+}
+
+.custom-grid-header-cell {
+    background: blue;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom-grid-header-cell p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom-grid-content-cell {
+    background: purple;
+}
+
+.custom-right-sidenav {
+    background: yellow;
+}
+
+.custom-left-sidenav {
+    background: green;
+}

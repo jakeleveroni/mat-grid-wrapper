@@ -1,0 +1,39 @@
+<mat-grid-list class="custom-grid" [cols]="config.totalColumns" [rowHeight]="config.rowHeight">
+  <!-- OPTIONAL HEADER ROW -->
+  <div *ngIf="config.headerRow">
+    <mat-grid-tile *ngFor="let tile of config.headerRow" 
+                    class="custom-grid-header-cell" 
+                    [colspan]="tile.colSpan"
+                    [rowspan]="tile.rowSpan" 
+                    [style.background]="tile.backgroundColor || white">
+      {{tile.contentRef}}
+    </mat-grid-tile>
+  </div>
+
+  <!-- OPTIONAL LEFT ALIGNED SIDENAV -->
+  <mat-grid-tile *ngIf="config.leftSidenav" 
+                  class="custom-left-sidenav"
+                  [colspan]="config.leftSidenav.colSpan" 
+                  [rowspan]="config.totalRows" 
+                  [style.background]="config.leftSidenav.backgroundColor || white">
+    {{config.leftSidenav.contentRef}}
+  </mat-grid-tile>
+
+  <!-- MAIN TILE CONTENT -->
+  <mat-grid-tile *ngFor="let tile of config.tiles"
+                  class="custom-grid-content-cell"
+                  [colspan]="tile.colSpan" 
+                  [rowspan]="tile.rowSpan" 
+                  [style.background]="tile.backgroundColor || white">
+    {{tile.contentRef}}
+  </mat-grid-tile>
+
+  <!-- OPTIONAL RIGHT ALIGNED SIDENAV -->
+  <mat-grid-tile *ngIf="config.rightSidenav" 
+                  class="custom-right-sidenav"
+                  [colspan]="config.rightSidenav.colSpan" 
+                  [rowspan]="config.totalRows" 
+                  [style.background]="config.rightSidenav.backgroundColor || white">
+    {{config.rightSidenav.contentRef}}
+  </mat-grid-tile>
+</mat-grid-list>
